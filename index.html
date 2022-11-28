@@ -236,27 +236,21 @@ ul.authors.affiliations li {
    <div class="byline">
     <ul class="authors">
      <li>
-      <a href = "https://chitwansaharia.github.io/" style="text-decoration:none; color: inherit;">Yinhuai Wang</a>
+      <a href = "https://yinhuai.github.io/" style="text-decoration:none; color: inherit;">Yinhuai Wang</a>
      </li>
      <li>
-      <a href = "http://www.jonathanho.me" style="text-decoration:none; color: inherit;">Jonathan Ho</a>
+      <a href = "https://jiwen.github.io/" style="text-decoration:none; color: inherit;">Jiwen Yu</a>
      </li>
      <li>
-      <a href = "http://williamchan.ca" style="text-decoration:none; color: inherit;">William Chan</a>
-     </li>
-     <li>
-      <a href = "http://www.research.google/people/106222/" style="text-decoration:none; color: inherit;">Tim Salimans</a>
-     </li>
-     <li>
-      <a href = "http://www.cs.toronto.edu/~fleet/" style="text-decoration:none; color: inherit;">David Fleet</a>
-     </li>
-     <li>
-      <a href = "https://norouzi.github.io/" style="text-decoration:none; color: inherit;">Mohammad Norouzi</a>
+      <a href = "https://jianzhang.tech/" style="text-decoration:none; color: inherit;">Jian Zhang</a>
      </li>
     </ul>
     <ul class="authors affiliations">
      <li>
-      <a href = "https://research.google/teams/brain/" style="text-decoration:none; color: inherit;">Google Research, Brain Team</a>
+      <a href = "https://www.ece.pku.edu.cn/en/" style="text-decoration:none; color: inherit;">Peking University, SECE</a>
+     </li>
+     <li>
+      <a href = "https://www.ece.pku.edu.cn/en/" style="text-decoration:none; color: inherit;">PCL</a>
      </li>
     </ul>
    </div>
@@ -265,26 +259,18 @@ ul.authors.affiliations li {
     <video controls autoplay loop width="1080" height="560" style="object-fit: contain;grid-column: page;">
      <source src="images/super_res_movie.m4v" type="video/mp4">
      </video>
-    <h3>Summary</h3>
+    <h3>Brief</h3>
     <p>
-      We present SR3, an approach to image <b>S</b>uper-<b>R</b>esolution via
-      <b>R</b>epeated <b>R</b>efinement. SR3 adapts denoising diffusion
-      probabilistic models to conditional image generation and
-      performs super-resolution through a stochastic denoising
-      process. Inference starts with pure Gaussian noise and
-      iteratively refines the noisy output using a U-Net model trained
-      on denoising at various noise levels. SR3 exhibits strong
-      performance on super-resolution tasks at different magnification
-      factors, on faces and natural images. We conduct human
-      evaluation on a standard 8&#215; face super-resolution task on
-      CelebA-HQ, comparing with SOTA GAN methods. SR3 achieves a confusion
-      rate close to 50%, suggesting photo-realistic outputs, while
-      GANs do not exceed a confusion rate of 34%. We further show the
-      effectiveness of SR3 in cascaded image generation, where
-      generative models are chained with super-resolution models,
-      yielding a competitive FID score of 11.3 on ImageNet.
+      Most existing Image Restoration (IR) models are task-specific, which can not be generalized to different degradation operators. 
+      In this work, we propose the <b>D<\b>enoising <b>D<\b>iffusion <b>N<\b>ull-Space <b>M<\b>odel (<b>DDNM<\b>), a novel zero-shot framework for arbitrary linear IR problems,
+      including but not limited to image super-resolution, colorization, inpainting, compressed sensing, and deblurring. 
+      DDNM only needs a pre-trained off-the-shelf diffusion model as the generative prior, without any extra training or network modifications. 
+      By refining only the null-space contents during the reverse diffusion process, we can yield diverse results satisfying both data consistency and realness. 
+      We further propose an enhanced and robust version, dubbed DDNM$^+$, to support noisy restoration and improve restoration quality for hard tasks. 
+      Our experiments on several IR tasks reveal that DDNM outperforms other state-of-the-art zero-shot IR methods. 
+      We also demonstrate that DDNM$^+$ can solve complex real-world applications, e.g., old photo restoration. 
     </p>
-    <h3>Super-Resolution Results</h3>
+    <h3>Range-Null Space Decomposition</h3>
     <p>
       We demonstrate the performance of SR3 on the tasks of face and natural image super-resolution. We perform face super-resolution at 16&#215;16 &rarr; 128&#215;128 and 64&#215;64 &rarr; 512&#215;512. We also train face super-resolution model for 64&#215;64 &rarr; 256&#215;256 and 256&#215;256 &rarr; 1024&#215;1024 effectively allowing us to do 16&#215; super-resolution through cascading. We also explore 64&#215;64 &rarr; 256&#215;256 super-resolution on natural images.
     </p>
@@ -300,7 +286,7 @@ ul.authors.affiliations li {
     </figure>
 
     <p>
-      <h3>Unconditional Generation Results</h3>
+      <h3>Zero-Shot Results</h3>
       <p>
         We generate unconditional 1024&#215;1024 unconditional face images using a cascade of an unconditional diffusion model at 64&#215;64 resolution followed by two 4&#215; super-resolution models. We also generate 256&#215;256 class conditional natural images by using a cascade of a class conditional diffusion model at 64&#215;64 resolution followed by a 4x super-resolution model. Cascaded generation allows training different models in parallel and inference is also efficient as lower resolution models can use more iterations, while higher resolution models use fewer iterations.
       </p>
