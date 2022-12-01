@@ -272,16 +272,16 @@ ul.authors.affiliations li {
     </p>
     <h3>Range-Null Space Decomposition (RND)</h3>
     <p>
-      RND is a well-known concept in the field of linear algebra. For linear inverse problems, the lost information is exactly the Null-space while the kept information is exactly the range-space. If we know the degradation operator, the range-space and null-space can be analytically disentangled.
+      RND is a well-known concept in the field of linear algebra. For linear inverse problems, the lost information is exactly the Null-space while the kept information is exactly the range-space. If we know the degradation operator, the range-space can be analytically solved, by which we can yield fully consistent results. Here's an example.
     </p>
     <figure  style="grid-column: text">
         <img src="images/rnd_colorization.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
-          <figcaption >  <b>RND for colorization task</b>: y is the input image, xr is the raw result. After RND operation, we yield a fully consistent colorization result.  </figcaption>
+          <figcaption >  <b>RND for colorization task</b>: y is the input image, xr is a raw result predicted by the network. It is obvious that xr is not consistent to y. But after a simple RND operation, we can yield a fully consistent colorization result.  </figcaption>
     </figure>
 
 
     <p>
-      <h3>Zero-Shot Results</h3>
+      <h3>RND for Diffusion Models</h3>
       <p>
         We generate unconditional 1024&#215;1024 unconditional face images using a cascade of an unconditional diffusion model at 64&#215;64 resolution followed by two 4&#215; super-resolution models. We also generate 256&#215;256 class conditional natural images by using a cascade of a class conditional diffusion model at 64&#215;64 resolution followed by a 4x super-resolution model. Cascaded generation allows training different models in parallel and inference is also efficient as lower resolution models can use more iterations, while higher resolution models use fewer iterations.
       </p>
