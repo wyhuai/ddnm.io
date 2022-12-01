@@ -270,20 +270,15 @@ ul.authors.affiliations li {
       Our experiments on several IR tasks reveal that DDNM outperforms other state-of-the-art zero-shot IR methods. 
       We also demonstrate that DDNM+ can solve complex real-world applications, e.g., old photo restoration. 
     </p>
-    <h3>Range-Null Space Decomposition</h3>
+    <h3>Range-Null Space Decomposition (RND)</h3>
     <p>
-      We demonstrate the performance of SR3 on the tasks of face and natural image super-resolution. We perform face super-resolution at 16&#215;16 &rarr; 128&#215;128 and 64&#215;64 &rarr; 512&#215;512. We also train face super-resolution model for 64&#215;64 &rarr; 256&#215;256 and 256&#215;256 &rarr; 1024&#215;1024 effectively allowing us to do 16&#215; super-resolution through cascading. We also explore 64&#215;64 &rarr; 256&#215;256 super-resolution on natural images.
+      RND is a well-known concept in the field of linear algebra. For linear inverse problems, the lost information is exactly the Null-space while the kept information is exactly the range-space. If we know the degradation operator, the range-space and null-space can be analytically disentangled.
     </p>
     <figure  style="grid-column: text">
-        <img src="images/super_res_examples.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
-          <figcaption >  <b>Super Resolution results</b>: (Above) 64&#215;64 &rarr; 512&#215;512 face super-resolution, (Below) 64&#215;64 -> 256&#215;256 natural image super-resolution.  </figcaption>
+        <img src="images/rnd_colorization.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
+          <figcaption >  <b>RND for colorization task</b>: y is the input image, xr is the raw result. After RND operation, we yield a fully consistent colorization result.  </figcaption>
     </figure>
 
-
-    <figure  style="grid-column: text">
-        <img src="images/human_eval.png" style="width: 100%; margin-top: 1rem;"/>
-          <figcaption> We conduct 2-Alternatative Forced Choice Experiment human evaluation experiment. Subjects are asked to choose between reference high resolution image, and the model output. We measure the performance of the model through confusion rates (% of time, raters choose model output over reference images.) (Above) We achieve close to 50% confusion rate on the task of 16&#215;16 -> 128&#215;128 faces outperforming state of the art face super-resolution methods. (Below) We also achieve 40% confusion rate on the much difficult task of 64x64 -> 256x256 natural images outperforming regression baseline by a large margin. </figcaption>
-    </figure>
 
     <p>
       <h3>Zero-Shot Results</h3>
