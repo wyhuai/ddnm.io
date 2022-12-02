@@ -283,22 +283,18 @@ ul.authors.affiliations li {
     <p>
       <h3>RND for Diffusion Models</h3>
       <p>
-        We generate unconditional 1024&#215;1024 unconditional face images using a cascade of an unconditional diffusion model at 64&#215;64 resolution followed by two 4&#215; super-resolution models. We also generate 256&#215;256 class conditional natural images by using a cascade of a class conditional diffusion model at 64&#215;64 resolution followed by a 4x super-resolution model. Cascaded generation allows training different models in parallel and inference is also efficient as lower resolution models can use more iterations, while higher resolution models use fewer iterations.
+        Diffusion models use a denoiser to remove the noise and generate the next state. This actually yields a clean image x0|t at each step.
       </p>
-
       <figure  style="grid-column: text">
-          <img src="images/cascade_fig.svg" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
-          <figcaption style="display:flex; justify-content: center"> Cascaded generation of unconditional 1024&#215;1024 faces.  </figcaption>
+          <img src="images/ddpm.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
+          <figcaption style="display:flex; justify-content: center"> Original DDPM reverse diffusion process.  </figcaption>
       </figure>
-
+      <p>
+        We apply RND to each clean image x0|t to yield consistent estimation.
+      </p>
       <figure  style="grid-column: text">
-          <img src="images/unconditional_faces.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
-          <figcaption style="display:flex; justify-content: center"> Selected example generations of unconditional 1024&#215;1024 faces.  </figcaption>
-      </figure>
-
-      <figure  style="grid-column: text">
-          <img src="images/class_cond_images.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
-          <figcaption style="display:flex; justify-content: center"> Selected example generations of class conditional 256&#215;256 natural images. Each row contains examples from a particular class.  </figcaption>
+          <img src="images/ddnm.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
+          <figcaption style="display:flex; justify-content: center"> DDNM reverse diffusion process. We apply RND to each clean image x0|t.  </figcaption>
       </figure>
 
 <h3>Related projects</h3>
