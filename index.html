@@ -309,11 +309,11 @@ ul.authors.affiliations li {
         
       <h3>DDNM for Noisy Restoration Tasks</h3>
       <p>
-        DDNM provides an elegant solution for general linear image restoration problems defined by <b>y=Ax</b>. However, it can not handle noisy situations where <b>y=Ax+n</b>. We provide a simple but effective solution. Since y contains additional noise <b>n</b>, we add two parameters Σt and Φt to make sure the total noise invariant while maximizing the range-space preservation.    
+        DDNM provides an elegant solution for general linear image restoration problems defined by <b>y=Ax</b>. However, it can not handle noisy situations where <b>y=Ax+n</b>. We provide a simple but effective solution. Since y contains additional noise <b>n</b>, we add parameters Σt and Φt to make sure the total noise in xt-1 is invariant while maximizing the range-space preservation.    
       </p>
       <figure  style="grid-column: text">
           <img src="images/ddnm+.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
-          <figcaption style="display:flex; justify-content: center"> DDNM+ reverse diffusion process. Σt and Φt make sure the total noise level is the same as the original diffusion model.  </figcaption>
+          <figcaption style="display:flex; justify-content: center"> DDNM+ reverse diffusion process. Σt and Φt make sure the total noise level in xt-1 is the same as the original.  </figcaption>
       </figure>
       <div style="text-align: center;">
         <video controls autoplay loop width="768" height="432" style="object-fit: contain;grid-column: page;text-align: center;">
@@ -322,7 +322,7 @@ ul.authors.affiliations li {
       </div>
     
       <h3>DDNM+ for Real-World Applications</h3>
-      Due to the property of pseudo-inverse, we can flexibly composite operators for real-world applications. Besides, the denoising mechanism is robust to various types of global artifacts, e.g., the JPEG artifacts. Here are some examples.
+      Due to the property of pseudo-inverse, we can flexibly composite operators for real-world applications. Besides, the denoising mechanism is robust to various types of global artifacts, e.g., the JPEG artifacts. Here are some demos.
       
       <div style="text-align: center;">
         <video controls autoplay loop width="768" height="432" style="object-fit: contain;grid-column: page;text-align: center;">
