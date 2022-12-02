@@ -256,9 +256,10 @@ ul.authors.affiliations li {
    </div>
   </div>
   <d-article>
-    <video controls autoplay loop width="1080" height="560" style="object-fit: contain;grid-column: page;">
-     <source src="images/super_res_movie.m4v" type="video/mp4">
-     </video>
+    <figure  style="grid-column: text">
+        <img src="images/front.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
+        <figcaption style="display:flex; justify-content: center"> DDNM solves diverse restoration tasks in a zero-shot manner.  </figcaption>
+    </figure>
     <h3>Introduction</h3>
     <p>
       Most existing Image Restoration (IR) models are task-specific, which can not be generalized to different degradation operators. 
@@ -313,26 +314,25 @@ ul.authors.affiliations li {
       </figure>
       
       <h3>DDNM+ for Real-World Applications</h3>
-      With the above xxx
+      Due to the property of pseudo-inverse, we can easily composite operators for real-world applications. Besides, the denoising mechanism is robust to various types of global artifacts, e.g., the JPEG artifacts. Here are some examples.
     
-<h3>Related projects</h3>
+<h3>Related Works</h3>
 <ul>
-  <li><a href="https://cascaded-diffusion.github.io/">Cascaded Diffusion Models</a></li>
-  <li><a href="https://iterative-refinement.github.io/palette/">Palette: Image-to-Image Diffusion Models</a></li>
+  <li><a href="https://arxiv.org/abs/2211.13524">GAN Prior based Null-Space Learning for Consistent Super-Resolution</a></li>
 </ul>
       
 
 <h3>Citation</h3>
 <p>
-  For more details and additional results, <a href="https://arxiv.org/abs/2104.07636">read the full paper</a>.
+  For more details and additional results, <a href="https://arxiv.org/pdf/2212.00490.pdf">read the full paper</a>.
 </p>
 <code>
-  @article{saharia2021image,
+  @article{wang2022ddnm,
   <div style="padding-left: 5%; margin: 0">
-    title={Image super-resolution via iterative refinement},<br/>
-    author={Saharia, Chitwan and Ho, Jonathan and Chan, William and Salimans, Tim and Fleet, David J and Norouzi, Mohammad},<br/>
-    journal={arXiv:2104.07636},<br/>
-    year={2021}}<br/>
+    title={Zero Shot Image Restoration Using Denoising Diffusion Null-Space Model},<br/>
+    author={Yinhuai, Wang and Jiwen, Yu and Jian, Zhang},<br/>
+    journal={arXiv:2212.00490},<br/>
+    year={2022}}<br/>
   </div>
   }<br/>
 </code>
