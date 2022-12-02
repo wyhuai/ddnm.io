@@ -296,7 +296,22 @@ ul.authors.affiliations li {
           <img src="images/ddnm.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
           <figcaption style="display:flex; justify-content: center"> DDNM reverse diffusion process. We apply RND to each clean image x0|t.  </figcaption>
       </figure>
-
+      <p>
+        By changing the degradation A, we can use a pretrained diffusion model to solve arbitrary linear inverse problems, without any training or optimization. Below we visualize the intermediate results of DDNM.
+      </p>
+      <video controls autoplay loop width="1080" height="560" style="object-fit: contain;grid-column: page;">
+      <source src="images/super_res_movie.m4v" type="video/mp4">
+      </video>
+    
+      <h3>DDNM for Noisy Restoration Tasks</h3>
+      <p>
+        DDNM provide a elegant solution for general linear image restoration problems y=Ax. However, it can not handle noisy situations where y=Ax+n. We provide a simple but effective solution to solve the noise. We add two parameters Σt and Φt to make sure the total noise invariant while maximizing the range-space preservation.    
+      </p>
+      <figure  style="grid-column: text">
+          <img src="images/ddnm+.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
+          <figcaption style="display:flex; justify-content: center"> DDNM+ reverse diffusion process. Σt and Φt make sure the total noise level is the same as the original diffusion model.  </figcaption>
+      </figure>
+    
 <h3>Related projects</h3>
 <ul>
   <li><a href="https://cascaded-diffusion.github.io/">Cascaded Diffusion Models</a></li>
